@@ -33,6 +33,10 @@ public class UniversitySelectionFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+        if(University.isUserUniversityPreferenceSaved()){
+            bypassUniversitySelectionScreen();
+        }
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_university_selection, container, false);
 
@@ -48,6 +52,10 @@ public class UniversitySelectionFragment extends Fragment {
         });
 
         return view;
+    }
+
+    private void bypassUniversitySelectionScreen() {
+
     }
 
     private void populateUniversitySpinner() {
