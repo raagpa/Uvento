@@ -58,4 +58,12 @@ public class University {
 
         return universityList;
     }
+
+    public static boolean isUserUniversityPreferenceSaved() {
+        String universityName = getUserSavedUniversityPreference();
+        if(null != universityName && ! "".equals(universityName)){
+            return true;
+        }
+        return false;
+    }
 }
