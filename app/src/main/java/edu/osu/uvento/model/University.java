@@ -1,7 +1,14 @@
 package edu.osu.uvento.model;
 
+import android.app.Activity;
+import android.content.Context;
+import android.content.SharedPreferences;
+
 import java.util.ArrayList;
 import java.util.List;
+
+import edu.osu.uvento.Constants.Constants;
+import edu.osu.uvento.uvento.R;
 
 /**
  * Created by chiragpa on 10/13/14.
@@ -18,13 +25,19 @@ public class University {
          return mockGetUniversitiesResponse();
     }
 
-    public static void saveUserUniversityPreference(String universityName){
+    public static void saveUserUniversityPreference(Activity activity, String universityName){
         //TODO @Neha -  Add code to save user's university preference in phone's local DB.
+        SharedPreferences sharedPref = activity.getPreferences(Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPref.edit();
+        editor.putString(Constants.USER_UNIV_PREFERENCE, universityName);
+        editor.commit();
     }
 
-    public static String getUserSavedUniversityPreference(){
+    public static String getUserSavedUniversityPreference(Activity activity){
         //TODO @Neha -  Add code to get user's university preference from phone's local DB.
-        return "Ohio State Univ.";
+        SharedPreferences sharedPref = activity.getPreferences(Context.MODE_PRIVATE);
+        String universityName = sharedPref.getString(Constants.USER_UNIV_PREFERENCE,"");
+        return universityName;
     }
 
     public String toString(){
@@ -59,8 +72,8 @@ public class University {
         return universityList;
     }
 
-    public static boolean isUserUniversityPreferenceSaved() {
-        String universityName = getUserSavedUniversityPreference();
+    public static boolean isUserUniversityPreferenceSaved(Activity activity) {
+        String universityName = getUserSavedUniversityPreference(activity);
         if(null != universityName && ! "".equals(universityName)){
             return true;
         }

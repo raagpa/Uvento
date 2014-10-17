@@ -1,7 +1,6 @@
 package edu.osu.uvento.contoller;
 
-import android.app.Activity;
-import android.net.Uri;
+import android.content.Intent;
 import android.os.Bundle;
 import android.app.Fragment;
 import android.view.LayoutInflater;
@@ -34,8 +33,8 @@ public class UniversitySelectionFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        if(University.isUserUniversityPreferenceSaved()){
-            bypassUniversitySelectionScreen();
+        if(University.isUserUniversityPreferenceSaved(getActivity())){
+            launchNextActivity();
         }
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_university_selection, container, false);
@@ -46,16 +45,20 @@ public class UniversitySelectionFragment extends Fragment {
         continueButton = (Button)view.findViewById(R.id.continue_button);
         continueButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-               University.saveUserUniversityPreference(univeristyListSpinner.getSelectedItem().toString());
+               University.saveUserUniversityPreference(getActivity(),univeristyListSpinner.getSelectedItem().toString());
                System.out.println(univeristyListSpinner.getSelectedItem().toString());
+               launchNextActivity();
             }
         });
 
         return view;
     }
 
-    private void bypassUniversitySelectionScreen() {
-
+    private void launchNextActivity() {
+            System.out.println("################BYPASS########################");
+        Intent i = new Intent(getActivity(),CategoryGridActivity.class);
+        startActivity(i);
+        getActivity().finish();
     }
 
     private void populateUniversitySpinner() {
