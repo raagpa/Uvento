@@ -2,8 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="edu.osu.uvento.uvento" >
 
-	<uses-permission android:name="android.permission.INTERNET" />
-	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
@@ -24,7 +24,7 @@
             android:label="@string/app_name" >
         </activity>
         <activity
-            android:name="edu.osu.uvento.contoller.CategoryGridActivity"
+            android:name="edu.osu.uvento.contoller.CategoryMultiFragmentActivity"
             android:label="@string/title_activity_category_grid" >
         </activity>
     </application>

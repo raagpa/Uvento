@@ -1,8 +1,8 @@
 package edu.osu.uvento.contoller;
 
+import android.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
-import android.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,7 +11,6 @@ import android.widget.Button;
 import android.widget.Spinner;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import edu.osu.uvento.model.University;
 import edu.osu.uvento.uvento.R;
@@ -36,6 +35,7 @@ public class UniversitySelectionFragment extends Fragment {
         if(University.isUserUniversityPreferenceSaved(getActivity())){
             launchNextActivity();
         }
+
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_university_selection, container, false);
 
@@ -51,12 +51,13 @@ public class UniversitySelectionFragment extends Fragment {
             }
         });
 
+
         return view;
     }
 
     private void launchNextActivity() {
-            System.out.println("################BYPASS########################");
-        Intent i = new Intent(getActivity(),CategoryGridActivity.class);
+        System.out.println("################BYPASS########################");
+        Intent i = new Intent(getActivity(),CategoryMultiFragmentActivity.class);
         startActivity(i);
         getActivity().finish();
     }
@@ -65,10 +66,7 @@ public class UniversitySelectionFragment extends Fragment {
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this.getActivity(),
                 android.R.layout.simple_spinner_item, new ArrayList<String>());
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        List univList = University.getUniversities();
-        for(int i=0 ;i< univList.size();i++) {
-            adapter.add(univList.get(i).toString());
-        }
+        University.getUniversities(getActivity(),adapter);
         univeristyListSpinner.setAdapter(adapter);
     }
 

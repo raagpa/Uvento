@@ -3,12 +3,14 @@ package edu.osu.uvento.model;
 import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
+import android.widget.ArrayAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import edu.osu.uvento.Constants.Constants;
-import edu.osu.uvento.uvento.R;
+import edu.osu.uvento.Services.ExternalService;
+import edu.osu.uvento.constants.Constants;
 
 /**
  * Created by chiragpa on 10/13/14.
@@ -20,22 +22,25 @@ public class University {
         this.name = name;
     }
 
-    public static List<University> getUniversities(){
-        //TODO @Drew -  Add code to get University names from external database using webservice
-         return mockGetUniversitiesResponse();
+    public static void getUniversities(Context context,ArrayAdapter adapter){
+
+        ExternalService service = new ExternalService();
+        ExternalService.getUniversities(context, adapter);
+
+        //return mockGetUniversitiesResponse();
     }
 
     public static void saveUserUniversityPreference(Activity activity, String universityName){
-        //TODO @Neha -  Add code to save user's university preference in phone's local DB.
-        SharedPreferences sharedPref = activity.getPreferences(Context.MODE_PRIVATE);
+
+        SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(activity);
         SharedPreferences.Editor editor = sharedPref.edit();
         editor.putString(Constants.USER_UNIV_PREFERENCE, universityName);
         editor.commit();
     }
 
     public static String getUserSavedUniversityPreference(Activity activity){
-        //TODO @Neha -  Add code to get user's university preference from phone's local DB.
-        SharedPreferences sharedPref = activity.getPreferences(Context.MODE_PRIVATE);
+
+        SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(activity);
         String universityName = sharedPref.getString(Constants.USER_UNIV_PREFERENCE,"");
         return universityName;
     }

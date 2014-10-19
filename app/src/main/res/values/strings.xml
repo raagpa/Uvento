@@ -15,5 +15,6 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_category_grid">CategoryGridActivity</string>
     <string name="title_activity_category_staggered_view">CategoryStaggeredViewActivity</string>
+    <string name="title_activity_multi_fragment">MultiFragmentActivity</string>
 
 </resources>
