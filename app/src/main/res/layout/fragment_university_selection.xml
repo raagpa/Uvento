@@ -50,5 +50,14 @@
         android:layout_alignEnd="@+id/university_spinner"
          />
 
+	<TextView
+		android:id="@+id/connection_status"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:text="Checking connection..."
+		android:layout_below="@id/continue_button"
+		android:layout_marginTop="16dp"
+		android:layout_marginLeft="16dp"/>
+
 
 </RelativeLayout>
