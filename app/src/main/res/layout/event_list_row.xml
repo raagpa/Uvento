@@ -31,10 +31,10 @@
         android:text="Oh!o Hackathon"
         android:textColor="#040404"
         android:typeface="sans"
-        android:textSize="15dip"
+        android:textSize="25dip"
         android:textStyle="bold"
         android:layout_toEndOf="@+id/thumbnail"
-        android:layout_centerVertical="true"
+        android:layout_alignTop="@+id/thumbnail"
         android:layout_toRightOf="@+id/thumbnail" />
 
 
@@ -43,7 +43,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:textColor="#343434"
-        android:textSize="10dip"
+        android:textSize="15dip"
         android:text="Computer Science and Engineering"
         android:layout_toEndOf="@+id/thumbnail"
         android:layout_alignBottom="@+id/thumbnail"
@@ -55,14 +55,15 @@
         android:id="@+id/date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_alignTop="@id/eventTitle"
         android:gravity="right"
         android:text="Oct 20"
-        android:layout_marginRight="5dip"
-        android:textSize="10dip"
+        android:textSize="20dip"
         android:textColor="#10bcc9"
-        android:textStyle="bold"/>
+        android:textStyle="bold"
+        android:layout_alignBaseline="@+id/group"
+        android:layout_alignBottom="@+id/group"
+        android:layout_alignRight="@+id/group"
+        android:layout_alignEnd="@+id/group" />
 
 
 

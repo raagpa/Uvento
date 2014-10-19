@@ -2,6 +2,7 @@ package edu.osu.uvento.contoller;
 
 
 import android.app.Fragment;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
@@ -39,6 +40,15 @@ public class UpcomingEventCategoryFragment extends Fragment {
         int width = metrics.widthPixels;
         int height = metrics.heightPixels;
         view.getLayoutParams().height = height/4;
+
+        mainImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(),EventListActivity.class);
+                startActivity(intent);
+
+            }
+        });
 
         textView = (TextView) view.findViewById(R.id.text_upcoming_events);
         textView.setText("All Upcoming Events");
