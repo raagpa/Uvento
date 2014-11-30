@@ -3,7 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_alignParentTop="true"
-    tools:context="edu.osu.uvento.contoller.UpcomingEventCategoryFragment">
+    android:background="@drawable/activity_bckgrnd"
+    tools:context="edu.osu.uvento.controller.fragments.UpcomingEventCategoryFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <ImageView

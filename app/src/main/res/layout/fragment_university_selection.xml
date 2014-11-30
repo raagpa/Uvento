@@ -3,8 +3,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@drawable/activity_bckgrnd"
 
-    tools:context="edu.osu.uvento.contoller.UniversitySelectionFragment">
+    tools:context="edu.osu.uvento.controller.fragments.UniversitySelectionFragment">
 
     <TextView
         android:id="@+id/university_label"

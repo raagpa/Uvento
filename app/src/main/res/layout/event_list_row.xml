@@ -17,9 +17,9 @@
 
         <ImageView
             android:id="@+id/list_image"
-            android:layout_width="50dip"
-            android:layout_height="50dip"
-            android:src="@drawable/ouab"/>
+            android:layout_width="65dip"
+            android:layout_height="65dip"
+            android:src="@drawable/load_animation"/>
 
     </LinearLayout>
 
@@ -31,7 +31,7 @@
         android:text="Oh!o Hackathon"
         android:textColor="#040404"
         android:typeface="sans"
-        android:textSize="25dip"
+        android:textSize="20dip"
         android:textStyle="bold"
         android:layout_toEndOf="@+id/thumbnail"
         android:layout_alignTop="@+id/thumbnail"
@@ -46,6 +46,7 @@
         android:textSize="15dip"
         android:text="Computer Science and Engineering"
         android:layout_toEndOf="@+id/thumbnail"
+        android:layout_toRightOf="@+id/thumbnail"
         android:layout_alignBottom="@+id/thumbnail"
         android:layout_alignLeft="@+id/eventTitle"
         android:layout_alignStart="@+id/eventTitle" />

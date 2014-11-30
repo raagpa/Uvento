@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/Menu"
+        android:showAsAction="always"
+        android:title=""
+        android:icon="@drawable/menu_icon_16">
+        <menu android:id="@+id/subMenu">
+            <item android:id="@+id/subscribe"
+                android:title="Subscribe"
+                android:showAsAction="collapseActionView"/>
+            <item android:id="@+id/setting"
+                android:title="Settings"
+                android:showAsAction="collapseActionView"/>
+        </menu>
+
+    </item>
+
+
+</menu>

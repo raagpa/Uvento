@@ -1,6 +1,5 @@
-package edu.osu.uvento.contoller;
+package edu.osu.uvento.controller.activities;
 
-import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.os.Bundle;
@@ -10,7 +9,9 @@ import edu.osu.uvento.uvento.R;
 /**
  * Created by chiragpa on 10/15/14.
  */
-public abstract class SingleFragmentActivity extends Activity {
+public abstract class SingleFragmentActivity extends ActivityWithMenu {
+
+    private static final String TAG = "SingleFragmentActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +30,8 @@ public abstract class SingleFragmentActivity extends Activity {
     }
 
     public abstract Fragment createNewFragment();
+
+
 
 
 }

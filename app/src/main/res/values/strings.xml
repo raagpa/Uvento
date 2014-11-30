@@ -16,5 +16,9 @@
     <string name="title_activity_category_grid">CategoryGridActivity</string>
     <string name="title_activity_category_staggered_view">CategoryStaggeredViewActivity</string>
     <string name="title_activity_multi_fragment">MultiFragmentActivity</string>
+    <string name="title_activity_subscribe_to">SubscribeTo</string>
+    <string name="title_activity_settings">Settings</string>
+    <string name="title_activity_event_details">EventDetailsActivity</string>
+    <string name="title_activity_google_maps">GoogleMapsActivity</string>
 
 </resources>

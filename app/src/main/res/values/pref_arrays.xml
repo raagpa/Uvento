@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="notificationArray">
+        <item>Day Of Event</item>
+        <item>Previous Day Of Event</item>
+        <item>1 Week Before Event</item>
+    </string-array>
+    <string-array name="notificationValues">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+
+    <string-array name="eventExpirationArray">
+        <item>1 Week After Event</item>
+        <item>2 Weeks After Event</item>
+        <item>1 Month After Event</item>
+    </string-array>
+    <string-array name="eventExpirationValues">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+</resources>

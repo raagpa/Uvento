@@ -1,55 +1,65 @@
 package edu.osu.uvento.model;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
-import android.widget.ArrayAdapter;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.io.Serializable;
 
-import edu.osu.uvento.Services.ExternalService;
 import edu.osu.uvento.constants.Constants;
 
 /**
  * Created by chiragpa on 10/13/14.
  */
-public class University {
+public class University implements Serializable {
+
+
     private String name;
+    private int id;
+    private String image_url;
 
     public University(String name){
         this.name = name;
     }
 
-    public static void getUniversities(Context context,ArrayAdapter adapter){
 
-        ExternalService service = new ExternalService();
-        ExternalService.getUniversities(context, adapter);
 
-        //return mockGetUniversitiesResponse();
-    }
-
-    public static void saveUserUniversityPreference(Activity activity, String universityName){
+    public static void saveUserUniversityPreference(Activity activity, String universityName , University univ){
 
         SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(activity);
         SharedPreferences.Editor editor = sharedPref.edit();
-        editor.putString(Constants.USER_UNIV_PREFERENCE, universityName);
+        editor.putString(Constants.USER_UNIV_NAME, universityName);
+        editor.putString(Constants.USER_UNIV_ID, univ.getId() + "");
+        editor.putString(Constants.USER_UNIV_IMAGE_URL,univ.getImage_url());
         editor.commit();
     }
 
-    public static String getUserSavedUniversityPreference(Activity activity){
+    public static String getUserSavedUniversityName(Activity activity){
 
         SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(activity);
-        String universityName = sharedPref.getString(Constants.USER_UNIV_PREFERENCE,"");
+        String universityName = sharedPref.getString(Constants.USER_UNIV_NAME,"");
         return universityName;
     }
 
+    public static String getUserSavedUniversityId(Activity activity){
+
+        SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(activity);
+        String univ_id = sharedPref.getString(Constants.USER_UNIV_ID, "");
+        return univ_id;
+    }
+
+
+    public static String getUserSavedUniversityImageURL(Activity activity){
+
+        SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(activity);
+        String image_url = sharedPref.getString(Constants.USER_UNIV_IMAGE_URL, "");
+        return image_url;
+    }
     public String toString(){
         return name;
     }
 
-    private static List<University> mockGetUniversitiesResponse() {
+   /* private static List<University> mockGetUniversitiesResponse() {
         ArrayList<University> universityList = new ArrayList<University>();
 
         University univ1 =  new University("Ohio State Univ.");
@@ -76,12 +86,36 @@ public class University {
 
         return universityList;
     }
-
+*/
     public static boolean isUserUniversityPreferenceSaved(Activity activity) {
-        String universityName = getUserSavedUniversityPreference(activity);
+        String universityName = getUserSavedUniversityName(activity);
         if(null != universityName && ! "".equals(universityName)){
             return true;
         }
         return false;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getImage_url() {
+        return image_url;
+    }
+
+    public void setImage_url(String image_url) {
+        this.image_url = image_url;
     }
 }

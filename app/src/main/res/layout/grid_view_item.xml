@@ -3,11 +3,12 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <edu.osu.uvento.contoller.SquareImageView
+    <edu.osu.uvento.controller.others.SquareImageView
         android:id="@+id/picture"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
+        android:background="@drawable/all_events"
         />
     <TextView
         android:id="@+id/text"

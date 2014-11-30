@@ -1,0 +1,54 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="edu.osu.uvento.controller.fragments.FilterDialogFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+   <RelativeLayout
+       android:layout_width="match_parent"
+       android:layout_height="match_parent">
+
+       <RadioGroup
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:id="@+id/filterRadioGroup"
+           android:checkedButton="@+id/byDateRadio">
+       <RadioButton
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:text="Date"
+           android:id="@+id/byDateRadio"
+           android:layout_gravity="center_horizontal|top"
+           android:layout_marginTop="44dp"
+
+            />
+
+
+       <DatePicker
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:id="@+id/datePicker"
+           android:layout_alignTop="@+id/byDateRadio"
+            />
+
+
+
+
+
+
+       </RadioGroup>
+
+       <Button
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:id="@+id/filter_button"
+           android:text = " Filter"
+           android:layout_alignParentRight="true"
+           android:layout_alignParentBottom="true"
+
+           />
+
+   </RelativeLayout>
+
+</FrameLayout>

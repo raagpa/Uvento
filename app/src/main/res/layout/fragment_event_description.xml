@@ -1,0 +1,219 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="edu.osu.uvento.controller.fragments.EventDetailsDescFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="475dp">
+
+
+        <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left|top">
+
+        <ImageView
+            android:id="@+id/event_image"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_gravity="top"
+            android:src="@drawable/load_animation"
+            />
+
+        <TextView
+            android:id="@+id/event_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Event : "
+            android:textSize="20dp"
+            android:layout_marginTop="20dp"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:layout_below="@+id/event_image" />
+
+
+        <TextView
+            android:id="@+id/event_title_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Event Title"
+            android:textSize="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/event_image"
+            android:layout_toRightOf="@+id/event_title"/>
+
+        <TextView
+            android:id="@+id/event_desc_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:text="This is a new Event. Enjoy!!"
+            android:layout_marginTop="10dp"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:layout_below="@+id/event_title" />
+
+        <TextView
+            android:id="@+id/event_date_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:text="Date and Time : "
+            android:layout_marginTop="10dp"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:layout_below="@+id/event_desc_value" />
+
+        <TextView
+            android:id="@+id/event_date_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="12/12/2014"
+            android:textSize="20dp"
+            android:layout_alignTop="@+id/event_date_time"
+            android:layout_toRightOf="@+id/event_date_time"
+            android:layout_toEndOf="@+id/event_date_time" />
+        <TextView
+            android:id="@+id/event_time_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="9 pm"
+            android:textSize="20dp"
+            android:layout_below="@+id/event_date_value"
+            android:layout_toRightOf="@+id/event_date_time"
+            android:layout_toEndOf="@+id/event_date_time" />
+
+        <TextView
+            android:id="@+id/event_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Location : "
+            android:textSize="20dp"
+
+            android:layout_marginTop="10dp"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:layout_below="@+id/event_time_value" />
+
+        <TextView
+            android:id="@+id/event_location_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="618 Stinchcomb Dr, Columbus, OH - 43202"
+            android:textSize="20dp"
+            android:layout_above="@+id/event_contact"
+            android:layout_toRightOf="@+id/event_location"
+            android:layout_toEndOf="@+id/event_location" />
+
+        <TextView
+            android:id="@+id/event_contact"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Contact : "
+            android:textSize="20dp"
+            android:layout_marginTop="10dp"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:layout_below="@+id/event_location" />
+
+        <TextView
+            android:id="@+id/event_contact_name_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Chirag Parekh"
+            android:textSize="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_toEndOf="@+id/event_contact"
+            android:layout_below="@+id/event_location"
+            android:layout_toRightOf="@+id/event_contact" />
+
+        <TextView
+            android:id="@+id/event_contact_phone_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="614-123-1234"
+            android:textSize="20dp"
+            android:layout_toEndOf="@+id/event_contact"
+            android:layout_below="@+id/event_contact_name_value"
+            android:layout_toRightOf="@+id/event_contact"/>
+        <TextView
+            android:id="@+id/event_contact_email_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="xyz@osu.edu"
+            android:textSize="20dp"
+            android:layout_toRightOf="@+id/event_contact"
+            android:layout_toEndOf="@+id/event_contact"
+            android:layout_below="@+id/event_contact_phone_value"/>
+
+        <TextView
+            android:id="@+id/event_category"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="School/Group : "
+            android:textSize="20dp"
+            android:layout_marginTop="10dp"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:layout_below="@+id/event_contact_email_value"/>
+
+        <TextView
+            android:id="@+id/event_category_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Computer Science and Engineering"
+            android:layout_marginTop="10dp"
+            android:textSize="20dp"
+            android:layout_toRightOf="@+id/event_category"
+            android:layout_toEndOf="@+id/event_category"
+            android:layout_below="@+id/event_contact_email_value"/>
+
+        <TextView
+            android:id="@+id/event_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Type : "
+            android:layout_marginTop="10dp"
+            android:textSize="20dp"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:layout_below="@+id/event_category"/>
+
+        <TextView
+            android:id="@+id/event_type_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Seminar"
+            android:textSize="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@+id/event_type"
+            android:layout_toEndOf="@+id/event_type"
+            android:layout_below="@+id/event_category"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/event_type_value"
+                android:layout_marginTop="20dp">
+
+                <fragment
+                    android:id="@+id/map"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+
+                    class="com.google.android.gms.maps.MapFragment" />
+            </LinearLayout>
+
+        </RelativeLayout>
+
+
+
+    </ScrollView>
+
+
+
+
+</FrameLayout>
